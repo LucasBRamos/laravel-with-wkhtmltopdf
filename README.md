@@ -16,11 +16,11 @@ version: '3'
 
 services:
 	app:
-	    image: lucasramos/laravel-sqlsrv:1.0.0
+	    image: lucasramos/laravel-with-wkhtmltopdf:1.0.0
 	    container_name: container_name
 	    network_mode: "bridge"
 	    volumes:
-	      - .:/var/www/
+	      - .:/var/www/app
 	    ports:
 	      - "80:80"
 ```

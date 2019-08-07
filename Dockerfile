@@ -48,7 +48,6 @@ RUN apk add --no-cache \
     && \
     # Install wkhtmltopdf from `testing` repository
     apk add qt5-qtbase-dev \
-    libxrender1 \
     wkhtmltopdf \
     --no-cache \
     --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
