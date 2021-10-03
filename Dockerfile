@@ -24,13 +24,13 @@ COPY sites /etc/nginx/sites
 COPY start.sh  /home/start.sh
 
 # Install nginx from dotdeb (already enabled on base image)
-RUN echo "--> Installing Nginx" && \
+RUN echo "Installing Nginx" && \
     apk add --update nginx openssl && \
     rm -rf /tmp/* /var/tmp/* /usr/share/doc/* && \
-    echo "--> Fixing permissions" && \
+    echo "Fixing permissions" && \
     mkdir /var/tmp/nginx && \
     mkdir /var/run/nginx && \
-    mkdir /home/ssl && \
+#    mkdir /home/ssl && \
     chown -R ambientum:ambientum /home/ssl && \
     chown -R ambientum:ambientum /var/tmp/nginx && \
     chown -R ambientum:ambientum /var/run/nginx && \
@@ -61,6 +61,8 @@ DISPLAY=:0.0 wkhtmltopdf-origin $@ \n\
 killall Xvfb\
 ' > /usr/bin/wkhtmltopdf && \
     chmod +x /usr/bin/wkhtmltopdf
+
+RUN apk add nodejs
 
 # Define the running user
 USER ambientum
