@@ -9,7 +9,7 @@
 #
 # Inspired by official PHP images.
 #
-FROM ambientum/php:7.3
+FROM ambientum/php:7.4
 
 # Repository/Image Maintainer
 LABEL maintainer="Lucas Ramos <lucasramos53@gmail.om>"
